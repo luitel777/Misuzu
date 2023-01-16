@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>
+            Misuzu
+        </title>
+        <link rel="stylesheet" href="web/css/homePage.css">
+        <link rel="stylesheet" href="web/css/bulma.css">
+    </head>
+
+    <body>
+        <div class="PageTitle">
+            <h1>
+                {{.PageTitle}}
+            </h1>
+            <br>
+
+            <form method="post" action="/update">
+                <input name="message"></input><br />
+                <input type="submit" hidden>
+            </form>
+
+            <div>
+                {{.Content}}
+            </div>
+
+
+        </div>
+    </body>
+</html>
