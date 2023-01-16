@@ -1,0 +1,21 @@
+version: '3.5'
+
+services:
+  db:
+    image: postgres
+    container_name: misuzu
+
+    restart: always
+    environment:
+     - POSTGRES_PASSWORD=misuzu_password
+     - POSTGRES_USER=pg
+     - POSTGRES_DB=misuzu_db
+
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+    ports:
+      - 5432:5432
+
+volumes:
+  db-data:
