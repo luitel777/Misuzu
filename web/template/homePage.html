@@ -10,7 +10,7 @@
     <body>
         <div class="PageTitle">
             <h1>
-                {{.PageTitle}}
+				{{.PageTitle}}
             </h1>
             <br>
 
@@ -23,7 +23,15 @@
 
 
             <div>
-                {{.Content}}
+
+				{{range .Misuzu}}
+				{{if .Date}}
+					{{.Date}}
+					{{.Content}}<br>
+				{{end}}
+				{{end}}
+
+
 
 
 

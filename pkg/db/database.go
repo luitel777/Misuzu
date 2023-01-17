@@ -2,6 +2,7 @@ package db
 
 import (
 	"fmt"
+	"html/template"
 	"os"
 
 	"gorm.io/driver/postgres"
@@ -12,7 +13,7 @@ type MisuzuModel struct {
 	Id         int `gorm:"primaryKey"`
 	Date       int64
 	Title      string
-	Content    string
+	Content    template.HTML
 	References string
 }
 
