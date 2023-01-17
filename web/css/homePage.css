@@ -1,8 +1,31 @@
 *{
+	margin: 0px;
+	/* background-color: #0d1017;
+	color: #dbd9d3; */
 	font-family: "iosevka_spw";
 }
 
+
 .PageTitle{
 	text-align: center;
-	color: black;
+	font-size: 2rem;
+	/* color: black; */
+}
+
+input[type=submit] {
+	float: right;
+	background-color: rgb(142, 69, 211);
+	color: white;
+	border: none;
+	text-decoration: none;
+	padding: 10px 10px;
+	margin: 10px 10px;
+}
+input[type=submit]:hover {
+	background-color: rgb(122, 13, 224);
+	cursor: pointer;
+}
+
+.card{
+	font-size: 1.3rem;
 }
