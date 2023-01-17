@@ -14,7 +14,5 @@ func main() {
 
 	fmt.Println("listening on 9090")
 
-	// db.Ping_database()
-
 	http.ListenAndServe(":9090", nil)
 }

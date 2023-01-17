@@ -2,24 +2,34 @@ package main
 
 import (
 	"html/template"
-	"log"
 	"net/http"
-	"os"
+
+	"github.com/luitel777/misuzu/pkg/handlers"
 )
 
 type config struct {
 	PageTitle string
 	Content   template.HTML
+	Date      int64
 }
 
 func renderPage(w http.ResponseWriter, r *http.Request, path string) {
-	con, err := os.ReadFile("dump")
-	if err != nil {
-		log.Println(err)
-	}
-	data := config{
-		PageTitle: "Miso soup",
-		Content:   template.HTML(con),
+
+	misuzu_contents := handlers.RetriveMessage()
+
+	data := make([]config, 10)
+
+	// data[0] = config{
+	// 	PageTitle: "Miso soup",
+	// 	Content:   template.HTML("ooo"),
+	// }
+
+	for i, k := range misuzu_contents {
+		data[i] = config{
+			PageTitle: "Miso soup",
+			Date:      k.Date,
+			Content:   template.HTML(k.Content),
+		}
 	}
 
 	tmpl, err := template.ParseFiles(path)
@@ -28,7 +38,7 @@ func renderPage(w http.ResponseWriter, r *http.Request, path string) {
 		panic(err)
 	}
 
-	tmpl.Execute(w, data)
+	tmpl.Execute(w, data[1])
 }
 
 func renderErrorPage(w http.ResponseWriter, r *http.Request) {

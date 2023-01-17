@@ -4,7 +4,7 @@ import "time"
 
 func SaveMessageDB(message string) {
 	updatemodel := MisuzuModel{
-		Date:       time.Month(time.Now().Local().Unix()),
+		Date:       time.Now().Unix(),
 		Title:      " ",
 		Content:    message,
 		References: "https://misuzu.com",

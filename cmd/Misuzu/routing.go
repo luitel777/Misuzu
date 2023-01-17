@@ -12,7 +12,7 @@ func pathHandler(w http.ResponseWriter, r *http.Request) {
 		renderPage(w, r, "web/template/homePage.html")
 
 	case "/update":
-		handlers.GetMessage(w, r)
+		handlers.SaveMessage(w, r)
 		http.Redirect(w, r, "/", http.StatusPermanentRedirect)
 
 	default:

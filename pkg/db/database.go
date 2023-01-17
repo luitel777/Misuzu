@@ -3,7 +3,6 @@ package db
 import (
 	"fmt"
 	"os"
-	"time"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -11,7 +10,7 @@ import (
 
 type MisuzuModel struct {
 	Id         int `gorm:"primaryKey"`
-	Date       time.Month
+	Date       int64
 	Title      string
 	Content    string
 	References string
