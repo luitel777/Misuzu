@@ -3,8 +3,8 @@
         <title>
             Misuzu
         </title>
-        <link rel="stylesheet" href="web/css/homePage.css">
         <link rel="stylesheet" href="web/css/bulma.css">
+        <link rel="stylesheet" href="web/css/homePage.css">
 
     </head>
 
@@ -16,7 +16,8 @@
             <br>
 
             <form method="post" action="/update">
-                <textarea name="message" class="textarea is-medium"></textarea><br />
+                <textarea name="message" class="textarea is-medium"></textarea>
+				<input name="title" class="input"> <br>
                 <input type="submit" value="Misuzu this thought!">
             </form>
 			<br><br>
@@ -27,10 +28,16 @@
 
 				{{range .Misuzu}}
 				{{if .Date}}
-					<div class="misuzu_unix_timestamp">
+					<span class="misuzu_unix_timestamp">
 						{{.Date}}
-					</div>
+					</span>
+					<span class="misuzu_title">
+						{{.Title}}
+					</span>
+					<div>
 					{{.Content}}<br>
+					</div>
+					<br>
 				{{end}}
 				{{end}}
 

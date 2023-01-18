@@ -29,3 +29,12 @@ input[type=submit]:hover {
 .card{
 	font-size: 1.3rem;
 }
+
+.misuzu_title{
+	font-size: 1.3rem;
+	text-decoration: underline;
+}
+
+.misuzu_unix_timestamp{
+	font-size: 1.3rem;
+}
