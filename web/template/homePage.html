@@ -5,6 +5,7 @@
         </title>
         <link rel="stylesheet" href="web/css/homePage.css">
         <link rel="stylesheet" href="web/css/bulma.css">
+
     </head>
 
     <body>
@@ -26,7 +27,9 @@
 
 				{{range .Misuzu}}
 				{{if .Date}}
-					{{.Date}}
+					<div class="misuzu_unix_timestamp">
+						{{.Date}}
+					</div>
 					{{.Content}}<br>
 				{{end}}
 				{{end}}
@@ -96,4 +99,30 @@
 
         </div>
     </body>
+	<script defer="none">
+			function changeTimestamp(){
+
+						// https://stackoverflow.com/a/35890537
+
+						unix_timestamp = 0;
+						formattedTime = 0;
+
+						unix_timestamp	 = document.getElementsByClassName("misuzu_unix_timestamp")
+						for(i in unix_timestamp){
+
+						unix_timestamp[i]=unix_timestamp[i]["innerHTML"]
+						a = unix_timestamp[i]["innerHTML"]
+  						const dtFormat = new Intl.DateTimeFormat('en-GB', {
+    						timeStyle: 'medium',
+    						timeZone: 'UTC'
+
+  						});
+  
+  						formattedTime = dtFormat.format(new Date(a * 1e3));
+						unix_timestamp[i].innerHTML = formattedTime
+						}
+
+			}
+			changeTimestamp()
+	</script>
 </html>
