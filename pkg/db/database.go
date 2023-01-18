@@ -31,25 +31,3 @@ func (MisuzuDB) InitMisuzuDatabase() *gorm.DB {
 	}
 	return db
 }
-
-// func ping_database() {
-// 	db := MisuzuDB.InitMisuzuDatabase(MisuzuDB{})
-
-// 	testmodel := MisuzuModel{
-// 		Date:  time.Now().Month(),
-// 		Title: "Making a coffee",
-// 		Content: `1) Add 1 tsb of sugar
-// 				  2) Add 1 cup of water
-// 				  3) Add 1 tsb of coffee
-// 				  4) Boil it
-// 				`,
-// 		References: "https://something.com",
-// 	}
-
-// 	db.AutoMigrate(&MisuzuModel{})
-
-// 	db.Create(&testmodel)
-
-// 	db.Delete(&testmodel)
-
-// }
