@@ -6,10 +6,10 @@ import (
 	"time"
 )
 
-func SaveMessageDB(message string) {
+func SaveMessageDB(message string, title string) {
 	updatemodel := MisuzuModel{
 		Date:       time.Now().Unix(),
-		Title:      " ",
+		Title:      title,
 		Content:    template.HTML(message),
 		References: "https://misuzu.com",
 	}

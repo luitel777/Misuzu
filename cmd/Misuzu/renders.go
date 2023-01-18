@@ -24,7 +24,7 @@ func renderPage(w http.ResponseWriter, r *http.Request, path string) {
 
 	misuzuArray := []db.MisuzuModel{}
 	for i := range misuzu_contents {
-		misuzuArray = append(misuzuArray, db.MisuzuModel{Date: misuzu_contents[i].Date, Content: misuzu_contents[i].Content})
+		misuzuArray = append(misuzuArray, db.MisuzuModel{Date: misuzu_contents[i].Date, Content: misuzu_contents[i].Content, Title: misuzu_contents[i].Title})
 	}
 
 	data = homepageValues{
@@ -39,7 +39,6 @@ func renderPage(w http.ResponseWriter, r *http.Request, path string) {
 
 	fmt.Println("Retriving data")
 	fmt.Println(misuzuArray)
-	fmt.Println(data.PageTitle)
 
 	err = tmpl.Execute(w, data)
 	if err != nil {

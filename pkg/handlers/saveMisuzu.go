@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/luitel777/misuzu/pkg/db"
@@ -9,8 +8,7 @@ import (
 
 func SaveMessage(w http.ResponseWriter, r *http.Request) {
 	misuzu_message := r.FormValue("message")
+	misuzu_title := r.FormValue("title")
 
-	fmt.Println(misuzu_message)
-
-	db.SaveMessageDB(misuzu_message)
+	db.SaveMessageDB(misuzu_message, misuzu_title)
 }
