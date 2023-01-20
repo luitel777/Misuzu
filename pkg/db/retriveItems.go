@@ -5,12 +5,13 @@ import (
 	"log"
 )
 
-func RetriveMessageDB() []MisuzuModel {
+func RetriveMessageDB(many int) []MisuzuModel {
 	retrive_db := MisuzuDB.InitMisuzuDatabase(MisuzuDB{})
 
 	fmt.Println("Retriving db")
 	models := []MisuzuModel{}
-	retrive_db.Find(&[]MisuzuModel{}).Scan(&models)
+	//retrive_db.Find(&[]MisuzuModel{}).Scan(&models)
+	retrive_db.Last(&[]MisuzuModel{}).Limit(many).Scan(&models)
 	fmt.Println(models)
 	sqlDB, err := retrive_db.DB()
 	if err != nil {

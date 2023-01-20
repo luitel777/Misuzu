@@ -18,7 +18,7 @@ type homepageValues struct {
 
 func renderPage(w http.ResponseWriter, r *http.Request, path string) {
 
-	misuzu_contents := handlers.RetriveMessage()
+	misuzu_contents := handlers.RetriveMessage(10)
 
 	data := homepageValues{}
 
@@ -34,7 +34,8 @@ func renderPage(w http.ResponseWriter, r *http.Request, path string) {
 
 	tmpl, err := template.ParseFiles(path)
 	if err != nil {
-		panic(err)
+		log.Println(err)
+		os.Exit(1)
 	}
 
 	fmt.Println("Retriving data")
