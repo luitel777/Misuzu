@@ -30,6 +30,7 @@ input[type=submit]:hover {
 	font-size: 1.3rem;
 }
 
+
 .misuzu_title{
 	font-size: 1.3rem;
 	text-decoration: underline;
@@ -37,4 +38,16 @@ input[type=submit]:hover {
 
 .misuzu_unix_timestamp{
 	font-size: 1.3rem;
+}
+
+a{
+	color: hsl(0, 0%, 7%);
+}
+
+a:hover{
+	color: hsl(0, 0%, 7%);
+}
+
+.misuzu_archive{
+	float: right;
 }

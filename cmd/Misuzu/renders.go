@@ -16,9 +16,9 @@ type homepageValues struct {
 	Misuzu    []db.MisuzuModel
 }
 
-func renderPage(w http.ResponseWriter, r *http.Request, path string) {
+func renderPage(w http.ResponseWriter, r *http.Request, path string, many int) {
 
-	misuzu_contents := handlers.RetriveMessage(10)
+	misuzu_contents := handlers.RetriveMessage(many)
 
 	data := homepageValues{}
 

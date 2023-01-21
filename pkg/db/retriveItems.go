@@ -10,7 +10,6 @@ func RetriveMessageDB(many int) []MisuzuModel {
 
 	fmt.Println("Retriving db")
 	models := []MisuzuModel{}
-	//retrive_db.Find(&[]MisuzuModel{}).Scan(&models)
 	retrive_db.Last(&[]MisuzuModel{}).Limit(many).Scan(&models)
 	fmt.Println(models)
 	sqlDB, err := retrive_db.DB()
