@@ -1,12 +1,14 @@
-*{
+* {
 	margin: 0px;
+	margin-left: 10px;
+	margin-right: 10px;
 	/* background-color: #0d1017;
 	color: #dbd9d3; */
 	font-family: "iosevka_spw";
 }
 
 
-.PageTitle{
+.PageTitle {
 	text-align: center;
 	font-size: 2rem;
 	/* color: black; */
@@ -21,33 +23,34 @@ input[type=submit] {
 	padding: 10px 10px;
 	margin: 10px 10px;
 }
+
 input[type=submit]:hover {
 	background-color: rgb(122, 13, 224);
 	cursor: pointer;
 }
 
-.card{
+.card {
 	font-size: 1.3rem;
 }
 
 
-.misuzu_title{
+.misuzu_title {
 	font-size: 1.3rem;
 	text-decoration: underline;
 }
 
-.misuzu_unix_timestamp{
+.misuzu_unix_timestamp {
 	font-size: 1.3rem;
 }
 
-a{
+a {
 	color: hsl(0, 0%, 7%);
 }
 
-a:hover{
+a:hover {
 	color: hsl(0, 0%, 7%);
 }
 
-.misuzu_archive{
+.misuzu_archive {
 	float: right;
 }
