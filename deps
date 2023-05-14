@@ -1,0 +1,3 @@
+curl -L "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" --output-dir web/css --output bulma.css &&
+curl -LO "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.css.map" --output-dir web/css &&
+go mod tidy
